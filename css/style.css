@@ -294,6 +294,25 @@ h3 { font-size: 1.65rem; }
 .path-list p { max-width: 560px; margin-bottom: 0; color: rgba(255,255,255,.75); font-size: .88rem; }
 .reiki-disclaimer { padding-block: 27px; background: #e8e2d6; }
 .reiki-disclaimer p { max-width: 950px; margin: 0 auto; color: var(--muted); font-size: .82rem; text-align: center; }
+.akashic-intro { background: var(--cream); }
+.akashic-reading { background: var(--paper); }
+.akashic-steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 42px; }
+.akashic-step { display: grid; grid-template-columns: 42px 1fr; gap: 18px; padding: 23px 0; border-top: 1px solid var(--line); }
+.akashic-step>span { color: var(--gold); font-size: .74rem; }
+.akashic-step h3 { margin-bottom: 7px; font-size: 1.4rem; }
+.akashic-step p { max-width: 480px; margin-bottom: 0; color: var(--muted); font-size: .88rem; }
+.akashic-questions { background: #eeece4; }
+.akashic-question-list { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+.akashic-question-list li { position: relative; padding: 15px 0 15px 25px; border-bottom: 1px solid var(--line); color: var(--muted); font-family: var(--serif); font-size: 1.14rem; }
+.akashic-question-list li:first-child { border-top: 1px solid var(--line); }
+.akashic-question-list li::before { position: absolute; left: 0; color: var(--gold); content: "·"; font-family: var(--sans); font-size: 1.3rem; }
+.akashic-practice { background: var(--paper); }
+.akashic-practice-art { position: relative; min-height: 340px; display: grid; grid-template-columns: repeat(2, 1fr); align-content: center; justify-items: center; gap: 17px; overflow: hidden; padding: 34px; background: var(--cream); }
+.akashic-practice-art::before, .akashic-practice-art::after { position: absolute; width: 230px; height: 230px; border: 1px solid rgba(176,154,104,.45); border-radius: 50%; content: ""; }
+.akashic-practice-art::after { width: 165px; height: 165px; border-color: rgba(102,119,106,.35); }
+.akashic-practice-art span { position: relative; z-index: 1; display: grid; width: 105px; height: 105px; place-items: center; border: 1px solid rgba(102,119,106,.24); border-radius: 50%; background: rgba(251,250,246,.9); color: var(--sage-dark); font-family: var(--serif); font-size: 1.1rem; }
+.akashic-practice-art span:nth-child(2), .akashic-practice-art span:nth-child(3) { transform: translateY(10px); }
+.akashic-practice>div>div:last-child>p:not(.eyebrow) { color: var(--muted); }
 
 .reveal { opacity: 1; transform: none; }
 .has-js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .65s ease, transform .65s ease; }
@@ -342,11 +361,15 @@ h3 { font-size: 1.65rem; }
   .principle-card:last-child { grid-column: 1 / -1; }
   .symbol-grid { grid-template-columns: 1fr; }
   .symbol-card>p:not(.symbol-association) { min-height: 0; }
+  .akashic-steps { gap: 0 25px; }
 }
 
 @media (max-width: 500px) {
   .container { width: min(100% - 34px, 440px); }
   .chakra-layout, .gassho-grid, .distance-grid, .path-grid { grid-template-columns: 1fr; gap: 38px; }
+  .akashic-steps { grid-template-columns: 1fr; }
+  .akashic-practice-art { min-height: 280px; padding: 24px; }
+  .akashic-practice-art span { width: 88px; height: 88px; font-size: 1rem; }
   .chakra-figure { width: min(100%, 255px); }
   .gassho-art { max-width: 380px; margin-inline: auto; }
   .reiki-toc-links { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding-block: 14px; scrollbar-width: thin; }
