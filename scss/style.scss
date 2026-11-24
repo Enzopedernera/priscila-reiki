@@ -1,11 +1,12 @@
-$ink: #30362f;
-$muted: #6c7066;
-$cream: #f4f0e9;
-$paper: #fbfaf7;
-$sand: #e6ddcf;
-$terracotta: #b8755c;
-$olive: #68735a;
-$line: rgba(48, 54, 47, .16);
+$ink: #303c34;
+$muted: #6b7169;
+$cream: #f4f1e9;
+$paper: #fbfaf6;
+$sand: #e8e2d6;
+$gold: #b09a68;
+$sage: #66776a;
+$sage-dark: #4a5b4e;
+$line: rgba(48, 60, 52, .16);
 $serif: "Playfair Display", Georgia, serif;
 $sans: "DM Sans", "Segoe UI", sans-serif;
 
@@ -13,7 +14,7 @@ $sans: "DM Sans", "Segoe UI", sans-serif;
 // dependency-free so the static page works before Sass is added to the project.
 :root {
   --ink: #{$ink}; --muted: #{$muted}; --cream: #{$cream}; --paper: #{$paper};
-  --sand: #{$sand}; --terracotta: #{$terracotta}; --olive: #{$olive}; --line: #{$line};
+  --sand: #{$sand}; --gold: #{$gold}; --sage: #{$sage}; --sage-dark: #{$sage-dark}; --line: #{$line};
   --serif: #{$serif}; --sans: #{$sans};
 }
 
