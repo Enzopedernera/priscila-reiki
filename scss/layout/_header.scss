@@ -1,0 +1,4 @@
+@use "../abstracts" as *;
+
+.site-header { position: fixed; z-index: 20; inset: 0 0 auto; border-bottom: 1px solid transparent; background: rgba(251,250,246,.95); transition: border-color var(--transition-standard), box-shadow var(--transition-standard); }
+.site-header.scrolled { border-color: var(--line); box-shadow: var(--shadow-soft); }

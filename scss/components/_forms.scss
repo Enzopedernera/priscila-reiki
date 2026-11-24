@@ -1,0 +1,17 @@
+@use "../abstracts" as *;
+
+.contact-form { padding: clamp(24px, 4.5vw, 48px); background: var(--paper); box-shadow: var(--shadow-card); }
+.form-heading h3 { margin-bottom: 8px; font-size: 2rem; }
+.form-heading>p:last-child { max-width: 500px; color: var(--muted); font-size: .81rem; }
+.form-field { margin-top: 18px; }
+.form-field label { display: block; margin-bottom: 7px; font-size: .78rem; font-weight: 600; }
+.form-field input, .form-field select, .form-field textarea { width: 100%; min-height: 48px; padding: 11px 13px; border: 1px solid rgba(48,60,52,.25); border-radius: var(--radius-none); background: white; font-size: .9rem; }
+.form-field textarea { min-height: 116px; resize: vertical; }
+.form-field input::placeholder, .form-field textarea::placeholder { color: #858980; }
+.form-consent { display: grid; grid-template-columns: 19px 1fr; align-items: start; gap: 10px; margin-top: 20px; }
+.form-consent input { width: 17px; height: 17px; margin: 3px 0 0; accent-color: var(--sage-dark); }
+.form-consent label { color: var(--muted); font-size: .75rem; line-height: 1.55; }
+.form-consent a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.form-submit { width: 100%; margin-top: 23px; cursor: pointer; }
+.form-status { min-height: 1.5em; margin: 13px 0 0; color: var(--sage-dark); font-size: .83rem; }
+.form-status a { text-decoration: underline; text-underline-offset: 3px; }

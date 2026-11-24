@@ -1,0 +1,4 @@
+@use "../abstracts" as *;
+
+.whatsapp { position: fixed; right: 24px; bottom: 24px; z-index: 15; width: 52px; height: 52px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.3); border-radius: 50%; background: #506b56; color: white; font-size: 1.3rem; box-shadow: 0 5px 20px rgba(38,48,39,.2); transition: transform .2s ease, background-color .2s ease; }
+.whatsapp:hover { transform: translateY(-3px); background: var(--sage-dark); }

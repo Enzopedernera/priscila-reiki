@@ -1,0 +1,5 @@
+@use "../abstracts" as *;
+
+.text-link { display: inline-flex; align-items: center; gap: var(--space-3); font-size: .77rem; font-weight: 600; letter-spacing: .075em; text-transform: uppercase; }
+.text-link span { color: var(--gold); font-size: 1.1rem; transition: transform var(--transition-fast); }
+.text-link:hover span { transform: translate(3px, -3px); }

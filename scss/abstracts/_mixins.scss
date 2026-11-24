@@ -1,0 +1,19 @@
+@use "sass:map";
+@use "breakpoints" as bp;
+
+@mixin respond-down($name) {
+  $breakpoint: map.get(bp.$breakpoints, $name);
+
+  @if $breakpoint == null {
+    @error "Unknown breakpoint `#{$name}`.";
+  }
+
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin container($max-width: var(--container-width), $gutter: 48px) {
+  width: min($max-width, calc(100% - #{$gutter}));
+  margin-inline: auto;
+}

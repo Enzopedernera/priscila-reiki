@@ -1,0 +1,35 @@
+@use "../abstracts" as *;
+
+.page-intro { padding-top: 152px; padding-bottom: 70px; background: var(--cream); }
+.page-intro h1 { max-width: 800px; margin: 12px 0 16px; font-size: clamp(2.8rem, 7vw, 5.2rem); letter-spacing: -.045em; }
+.page-intro .intro-copy { max-width: 720px; color: var(--muted); font-size: 1.04rem; }
+.service-meta { margin: 18px 0; padding: 15px 0; border-block: 1px solid var(--line); color: var(--muted); font-size: .83rem; }
+.service-meta span { color: var(--ink); font-weight: 600; }
+.experiences-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.experiences-gallery img { width: 100%; aspect-ratio: .85; }
+.offer-card { padding: clamp(26px, 4vw, 48px); background: var(--cream); }
+.offer-card h2 { margin: 15px 0; font-size: clamp(2rem, 3vw, 3rem); }
+.offer-card h3 { margin: 32px 0 14px; font-size: 1.55rem; }
+.offer-card p, .offer-card li, .logistics-list p { color: var(--muted); font-size: .94rem; }
+.offer-facts { margin: 24px 0; padding: 14px 0; border-block: 1px solid var(--line); list-style: none; }
+.offer-facts li { padding: 5px 0; }
+.offer-facts li::before { margin-right: 10px; color: var(--gold); content: "•"; }
+.itinerary { padding-left: 22px; }
+.itinerary li { padding: 0 0 10px 6px; }
+.itinerary li::marker { color: var(--sage-dark); font-weight: 600; }
+.offer-card strong { color: var(--ink); }
+.offer-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.offer-logistics { background: var(--cream); }
+.logistics-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 80px; }
+.logistics-grid h2 { max-width: 450px; }
+.logistics-grid>div:first-child>p { max-width: 430px; color: var(--muted); }
+.logistics-list>div { padding: 18px 0; border-top: 1px solid var(--line); }
+.logistics-list h3 { margin-bottom: 8px; font-size: 1.4rem; }
+.logistics-list p { margin-bottom: 0; }
+.offer-cta { background: var(--sage-dark); color: white; }
+.offer-cta .eyebrow, .offer-cta .offer-contact-links span { color: #e7d8b8; }
+.offer-cta .contact-grid { align-items: end; }
+.offer-cta .contact-grid>div:first-child>p:not(.eyebrow) { max-width: 470px; color: rgba(255,255,255,.77); }
+.offer-contact-links { padding-top: 12px; border-top: 1px solid rgba(255,255,255,.3); }
+.offer-contact-links a { display: block; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.19); font-size: .9rem; }
+.offer-contact-links span { display: block; margin-bottom: 3px; font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; }

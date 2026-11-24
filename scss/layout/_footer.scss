@@ -1,0 +1,10 @@
+@use "../abstracts" as *;
+
+.site-footer { padding-block: 48px 24px; background: var(--ink); color: rgba(255,255,255,.76); }
+.footer-grid { display: grid; grid-template-columns: 1fr 1.4fr .7fr; align-items: start; gap: 44px; }
+.footer-brand { color: white; }
+.footer-grid>div:first-child>p { margin: 14px 0 0; color: rgba(255,255,255,.62); font-size: .79rem; }
+.footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 25px; font-size: .78rem; }
+.footer-links a:hover, .footer-contact a:hover { color: #e7d8b8; }
+.footer-contact { display: grid; gap: 12px; font-size: .78rem; overflow-wrap: anywhere; }
+.footer-bottom { margin: 38px 0 0; padding-top: 17px; border-top: 1px solid rgba(255,255,255,.18); color: rgba(255,255,255,.57); font-size: .71rem; }

@@ -1,0 +1,7 @@
+@use "../abstracts" as *;
+
+.info-content { max-width: 790px; }
+.info-content h2 { margin-top: 36px; font-size: 1.75rem; }
+.info-content p, .info-content li { color: var(--muted); }
+.info-content a { text-decoration: underline; text-underline-offset: 3px; }
+.notice-box { padding: 20px 24px; border-left: 3px solid var(--gold); background: var(--cream); color: var(--muted); }

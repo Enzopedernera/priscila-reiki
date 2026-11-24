@@ -1,0 +1,90 @@
+@use "abstracts" as *;
+
+@include respond-down("navigation") {
+  .nav { min-height: 72px; }
+  .menu-toggle { width: 44px; height: 44px; display: grid; align-content: center; justify-items: center; gap: 6px; border: 1px solid var(--line); background: transparent; cursor: pointer; }
+  .menu-toggle span { width: 19px; height: 1px; background: var(--ink); transition: transform .2s ease; }
+  .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(3.5px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+  .nav-links { position: absolute; top: calc(100% + 1px); inset-inline: 0; display: flex; align-items: stretch; flex-direction: column; gap: 0; padding: 8px 24px 20px; border-bottom: 1px solid var(--line); background: var(--paper); box-shadow: 0 12px 22px rgba(48,60,52,.07); opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-8px); transition: opacity .2s ease, transform .2s ease, visibility .2s; }
+  .nav-links.open { opacity: 1; visibility: visible; pointer-events: auto; transform: none; }
+  .nav-links>a:not(.button) { padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .nav-links .nav-cta { margin-top: 15px; }
+  .service-card { grid-template-columns: .7fr 1.3fr; }
+  .service-image img { min-height: 400px; }
+}
+@include respond-down("tablet") {
+  html { scroll-padding-top: 78px; }
+  .container { @include container(560px, 40px); }
+  .hero { min-height: min(740px, 94svh); background-position: 55% center; }
+  .hero-shade { background: linear-gradient(90deg, rgba(28,38,31,.78), rgba(32,43,35,.53) 80%, rgba(37,47,38,.3)); }
+  .hero-inner { padding-block: 130px 108px; }
+  .hero h1 { font-size: clamp(3.45rem, 11.4vw, 5.4rem); }
+  .welcome-grid, .about-grid, .reiki-grid, .benefit-layout, .faq-grid, .contact-grid, .logistics-grid { grid-template-columns: 1fr; gap: 38px; }
+  .about-image { width: min(100% - 18px, 410px); margin-right: 18px; aspect-ratio: .94; }
+  .about-image img { object-position: center 60%; }
+  .reiki-grid { gap: 34px; }
+  .services-grid { grid-template-columns: 1fr; gap: 18px; }
+  .service-card { grid-template-columns: .8fr 1.2fr; }
+  .service-image img { min-height: 340px; }
+  .benefit-layout { gap: 24px; }
+  .experiences-intro { align-items: start; flex-direction: column; gap: 24px; }
+  .section-heading { align-items: start; flex-direction: column; gap: 12px; }
+  .section-heading>p { max-width: 460px; }
+  .contact-grid { gap: 36px; }
+  .footer-grid { grid-template-columns: 1fr 1.5fr; gap: 30px; }
+  .footer-contact { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 10px 24px; }
+  .offer-grid { grid-template-columns: 1fr; }
+  .logistics-grid { gap: 24px; }
+  .reiki-toc-links { justify-content: flex-start; gap: 8px 18px; }
+  .principle-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .principle-card, .principle-card:nth-child(4) { grid-column: auto; }
+  .principle-card:last-child { grid-column: 1 / -1; }
+  .symbol-grid { grid-template-columns: 1fr; }
+  .symbol-card>p:not(.symbol-association) { min-height: 0; }
+  .akashic-steps { gap: 0 25px; }
+}
+@include respond-down("mobile") {
+  .container { @include container(440px, 34px); }
+  .chakra-layout, .gassho-grid, .distance-grid, .path-grid { grid-template-columns: 1fr; gap: 38px; }
+  .akashic-steps { grid-template-columns: 1fr; }
+  .akashic-practice-art { min-height: 280px; padding: 24px; }
+  .akashic-practice-art span { width: 88px; height: 88px; font-size: 1rem; }
+  .chakra-figure { width: min(100%, 255px); }
+  .gassho-art { max-width: 380px; margin-inline: auto; }
+  .reiki-toc-links { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding-block: 14px; scrollbar-width: thin; }
+  .reiki-toc-links a { flex: 0 0 auto; }
+  .section { padding-block: 76px; }
+  .hero { min-height: 690px; min-height: min(740px, 94svh); }
+  .hero h1 { font-size: clamp(3.35rem, 13.8vw, 4.6rem); }
+  .hero-actions { align-items: flex-start; flex-direction: column; gap: 18px; }
+  .hero-actions .button { width: 100%; }
+  .hero-note { right: 17px; bottom: 18px; font-size: .56rem; }
+  .welcome-grid { gap: 20px; }
+  .service-card { grid-template-columns: 1fr; }
+  .service-image img { height: 245px; min-height: 0; aspect-ratio: 1.5; }
+  .service-body { padding: 23px; }
+  .benefit-list { grid-template-columns: 1fr; }
+  .benefit-list li { padding: 14px 0; }
+  .experiences-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .contact-form { padding: 24px 19px; }
+  .principle-grid { grid-template-columns: 1fr; }
+  .principle-card:last-child { grid-column: auto; }
+  .principle-card { min-height: 0; }
+  .principle-mark { margin-bottom: 18px; }
+  .chakra-card { min-height: 0; padding: 25px 21px; }
+  .chakra-facts>div { grid-template-columns: 1fr; gap: 3px; }
+  .gassho-art { padding: 26px 18px; }
+  .symbol-card { padding: 24px; }
+  .distance-card { padding: 24px 20px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-links { gap: 12px 18px; }
+  .footer-contact { grid-column: auto; display: grid; }
+  .whatsapp { right: 16px; bottom: 16px; width: 48px; height: 48px; }
+  .page-intro { padding-top: 126px; }
+  .page-intro h1 { font-size: clamp(2.6rem, 12vw, 4rem); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .has-js .reveal { opacity: 1; transform: none; }
+}

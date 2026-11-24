@@ -1,0 +1,5 @@
+@use "../abstracts" as *;
+
+.reveal { opacity: 1; transform: none; }
+.has-js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .65s ease, transform .65s ease; }
+.has-js .reveal.visible { opacity: 1; transform: none; }
