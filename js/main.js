@@ -39,6 +39,15 @@ const revealItems = document.querySelectorAll('.reveal');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 if (!reduceMotion && 'IntersectionObserver' in window) {
+    const revealInViewport = () => revealItems.forEach(item => {
+        if (item.classList.contains('visible')) return;
+
+        const bounds = item.getBoundingClientRect();
+        if (bounds.bottom >= 0 && bounds.top <= window.innerHeight * 1.1) {
+            item.classList.add('visible');
+            observer.unobserve(item);
+        }
+    });
     const observer = new IntersectionObserver(entries => entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
@@ -46,12 +55,42 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
         }
     }), { threshold: .12 });
     revealItems.forEach(item => observer.observe(item));
+    window.addEventListener('scroll', revealInViewport, { passive: true });
+    window.addEventListener('resize', revealInViewport);
+    revealInViewport();
 } else {
     revealItems.forEach(item => item.classList.add('visible'));
 }
 
 const year = document.querySelector('#year');
 if (year) year.textContent = new Date().getFullYear();
+
+const chakraCard = document.querySelector('#chakra-card');
+const chakraPoints = document.querySelectorAll('.chakra-point');
+
+if (chakraCard && chakraPoints.length) {
+    const chakraName = chakraCard.querySelector('[data-chakra-name]');
+    const chakraNumber = chakraCard.querySelector('[data-chakra-number]');
+    const chakraLocation = chakraCard.querySelector('[data-chakra-location]');
+    const chakraColor = chakraCard.querySelector('[data-chakra-color]');
+    const chakraConcept = chakraCard.querySelector('[data-chakra-concept]');
+    const chakraSwatch = chakraCard.querySelector('[data-chakra-swatch]');
+
+    chakraPoints.forEach((point, index) => {
+        point.addEventListener('click', () => {
+            chakraPoints.forEach(item => item.setAttribute('aria-pressed', String(item === point)));
+            chakraNumber.textContent = String(chakraPoints.length - index).padStart(2, '0');
+            chakraName.textContent = point.dataset.name;
+            chakraLocation.textContent = point.dataset.location;
+            chakraColor.textContent = point.dataset.color;
+            chakraConcept.textContent = point.dataset.concept;
+            chakraSwatch.style.setProperty('--chakra-color', getComputedStyle(point).getPropertyValue('--chakra-color'));
+        });
+    });
+
+    const selectedChakra = [...chakraPoints].find(point => point.getAttribute('aria-pressed') === 'true');
+    if (selectedChakra) chakraSwatch.style.setProperty('--chakra-color', getComputedStyle(selectedChakra).getPropertyValue('--chakra-color'));
+}
 
 const serviceSelect = document.querySelector('#contact-service');
 const selectedService = new URLSearchParams(window.location.search).get('servicio');
